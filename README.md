@@ -10,8 +10,16 @@ http://localhost:8080
 
 docker logs rs-container
 
+cat /etc/hosts
+
+# check environmnet variable within continer
+env or printenv
+echo $SPRING_PROFILES_ACTIVE
+
+docker exec rs-nginx-container printenv
+
 # Getting specific attr
- docker inspect rs-nginx-container --format '{{json .Mounts}}' | jq .
- docker inspect rs-nginx-container --format '{{json .ImageManifestDescriptor.platform.os}}' | jq .
+docker inspect rs-nginx-container --format '{{json .Mounts}}' | jq .
+docker inspect rs-nginx-container --format '{{json .ImageManifestDescriptor.platform.os}}' | jq .
 docker inspect rs-nginx-container --format '{{json .ImageManifestDescriptor.platform}}' | jq .
 
