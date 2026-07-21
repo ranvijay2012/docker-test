@@ -1,7 +1,12 @@
 
-commands docker build -t my-nginx-app .
+commands docker build -t rs-nginx .
 
-docker run -d -p 8080:80 --name my-nginx-container my-nginx-app
+docker run -d -p 8080:80 --name rs-container rs-nginx 
+<!-- 8080 is local host port -->
 
-docker container exec -it my-nginx-container /bin/sh
+docker container exec -it rs-container /bin/sh
+
+http://localhost:8080
+
+docker logs rs-container
 
